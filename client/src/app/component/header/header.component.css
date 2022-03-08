@@ -1,0 +1,25 @@
+.header-container {
+  width: 100%;
+  position: sticky;
+}
+.navbar-brand {
+  margin-left: 650px;
+}
+.nav-item {
+  font-size: large;
+  margin-left: 10px;
+}
+.nav-link {
+  color: rgb(113, 66, 241);
+}
+.navbar-light .navbar-nav .nav-link {
+  color: rgb(255, 255, 255);
+}
+#intro-example {
+  height: 400px;
+}
+@media (min-width: 992px) {
+  #intro-example {
+    height: 600px;
+  }
+}

@@ -1,0 +1,165 @@
+<form [formGroup]="registrationForm" >
+  <section class="vh-auto" style="opacity: 97%">
+    <div class="container py-5 h-100" style="padding-top: 1rem !important">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: 1rem; color: #FBB753;">
+            <div class="row g-0">
+              <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <img
+                  src="https://www.uncoaching.online/wp-content/uploads/2021/12/61404c006d5b90c0d507a2ef_Drawkit-Ecommerce-Online-Shopping-GIF.gif"
+                  alt="login form"
+                  class="img-fluid"
+                  style="border-radius: 1rem 0 0 1rem; height: 100%"/>
+              </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <span class="h1 fw-bold mb-0" style="font-size: 5rem">EVENT BOOKING</span>
+                  </div>
+
+                  <h1 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">
+                    Create a new account
+                  </h1>
+
+                  <div class="form-outline mb-4">
+                    <input
+                      type="text"
+                      id="form2Example17"
+                      class="form-control form-control-lg required"
+                      required = "required"
+                      formControlName="userName"
+                      aria-required="true"
+                      placeholder="* User Name"
+                      [class.is-invalid]="
+                      registerForm.userName.invalid && registerForm.userName.touched"/>
+                    <div *ngIf="registerForm.userName.invalid && registerForm.userName.touched">
+                      <small
+                        class="text-danger"
+                        *ngIf="registerForm.userName.errors?.required">User Name is required</small>
+                      <small
+                        class="text-danger"
+                        *ngIf="registerForm.userName.errors?.pattern">User Name should contain only alphabets and minimum 3
+                        alphabets
+                      </small>
+                    </div>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input
+                      type="tel"
+                      id="form2Example17"
+                      class="form-control form-control-lg "
+                      formControlName="phoneNumber"
+                      placeholder="* Mobile Number"
+                      [class.is-invalid]="
+                        registerForm.phoneNumber.invalid && registerForm.phoneNumber.touched"/>
+                    <div
+                      *ngIf="registerForm.phoneNumber.touched && registerForm.phoneNumber.invalid"
+                      class="text-danger">
+                      <small
+                      *ngIf="registerForm.phoneNumber.touched && registerForm.phoneNumber.invalid"
+                        class="text-danger">Mobile Number is required.</small>
+                      <small
+                        *ngIf="registerForm.phoneNumber.errors?.pattern"
+                        class="text-danger">Please enter 10 digit Mobile Number.</small>
+                    </div>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input
+                      type="email"
+                      id="form2Example17"
+                      class="form-control form-control-lg"
+                      formControlName="email"
+                      placeholder="* Email Address"
+                      [class.is-invalid]="registerForm.email.invalid && registerForm.email.touched"/>
+                    <div *ngIf="registerForm.email.invalid && registerForm.email.touched">
+                      <small
+                        class="text-danger"
+                        *ngIf="registerForm.email.errors?.required">Email is required
+                      </small>
+                      <small
+                        class="text-danger"
+                        *ngIf="registerForm.email.errors?.pattern">Email should be in the type of ab@abc.com
+                      </small>
+                    </div>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input
+                      type="password"
+                      id="form2Example17"
+                      class="form-control form-control-lg"
+                      formControlName="password"
+                      placeholder="* Create Password"
+                      [class.is-invalid]="
+                        registerForm.password.invalid && registerForm.password.touched"/>
+                    <div *ngIf="registerForm.password.invalid && registerForm.password.touched">
+                      <small
+                        class="text-danger"
+                        *ngIf="registerForm.password.errors?.required">Please fill the password</small>
+                      <small
+                        class="text-danger"
+                        *ngIf="registerForm.password.errors?.pattern">Your password must contain at least one uppercase, one
+                        lowercase, and one number
+                      </small>
+                    </div>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input
+                      type="password"
+                      id="form2Example27"
+                      class="form-control form-control-lg"
+                      formControlName="confirmPassword"
+                      placeholder="* Confirm Password"
+                      [class.is-invalid]="registrationForm.errors?.misMatch"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="registrationForm.errors?.misMatch">Password do not match</small>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <div class="form-group" style="margin-bottom: 15px">
+                      <select
+                        placeholder="Roles"
+                        formControlName="role"
+                        class="form-control"
+                        style="width: 300px">
+                        <option style="color: dimgray;" value="" selected disabled hidden>* Choose the Role here</option>
+                        <option selected="selected">Admin</option>
+                        <option>Customer</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="pt-1 mb-4">
+                    <button
+                      (click)="registerUser()"
+                      class="btn btn-warning btn-lg btn-block"
+                      style="width: 100%; opacity: 100%"
+                      type="button">
+                      Register
+                    </button>
+                  </div>
+
+                  <p class="mb-5 pb-lg-2" style="color: #393f81">
+                    Have an account?
+                    <a
+                      routerLink="/"
+                      routerLinkActive="active"
+                      style="color: #393f81">Login here</a>
+                  </p>
+                  <a href="#!" class="small text-muted">Terms of use.</a>
+                  <a href="#!" class="small text-muted">Privacy policy</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</form>

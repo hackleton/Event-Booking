@@ -1,0 +1,61 @@
+<header>
+  <nav
+    *ngIf="logoutStatus"
+    class="navbar navbar-expand-lg navbar-light"
+    style="background-color: #faa916"
+  >
+    <div class="container-fluid">
+
+      <div class="navbar-collapse" id="navbarExample01">
+        <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item active">
+            <a
+              class="nav-link"
+              aria-current="page"
+              *ngIf="roleStatus"
+              routerLink="/home"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" *ngIf="roleStatus" routerLink="/order/list">Booking List</a>
+            <a class="nav-link" *ngIf="!roleStatus" routerLink="/product-list">Events</a>
+          </li>
+          <li  class="nav-item active">
+              <a class="nav-link" *ngIf="roleStatus" routerLink="/order/create">Create Bookings</a>
+              <a class="nav-link" *ngIf="!roleStatus" routerLink="/cart">Cart</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" *ngIf="roleStatus" routerLink="/product-list">Events</a>
+
+          </li>
+          <li  class="nav-item active">
+            <a class="nav-link" *ngIf="roleStatus" routerLink="/cart">Cart</a>
+          </li>
+
+          <li  class="nav-item active">
+            <a class="nav-link" routerLink="/your-orders">Orders</a>
+          </li>
+        </ul>
+
+        <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li
+            class="nav-item"
+            style="margin-left: 50rem; margin-top: 5px; cursor: pointer; color: white;"
+          >
+            {{ userName | uppercase }}
+          </li>
+          <li style="margin-left: 30px; color: white" class="nav-item">
+            <i
+              
+              (click)="logout()"
+              style="cursor: pointer"
+              class="material-icons"
+              >logout</i
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

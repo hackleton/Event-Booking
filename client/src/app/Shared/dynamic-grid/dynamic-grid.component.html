@@ -1,0 +1,9 @@
+<app-order-list
+  *ngIf="tabledata && fullTableData"
+  [dataSource]="tabledata"
+  [fullTableData]="fullTableData"
+  [paginationSizes]="[5, 10, 15, 20, 50]"
+></app-order-list>
+
+
+

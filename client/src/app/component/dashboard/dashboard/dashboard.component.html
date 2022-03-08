@@ -1,0 +1,30 @@
+<div class="chart">
+  <div class="mini-card">
+    <p>The total number of booking is {{ totalOrders }}</p>
+  </div>
+  <div *ngIf="roleStatus" class="mini-card">
+    <p>
+      Create your own choice and set of Bookings
+      <a routerLink="/order/create"> Click here</a>
+    </p>
+  </div>
+  <div *ngIf="roleStatus" class="mini-card">
+    <p>
+      List of your bookings is one click away
+      <a routerLink="/order/list"> Click here</a>
+    </p>
+  </div>
+</div>
+
+<div *ngIf="chartStatus">
+  <div class="chart">
+    <div id="divChaart" style="margin-left: 20px">
+      <canvas id="canvas"></canvas>
+    </div>
+  </div>
+</div>
+
+
+
+
+

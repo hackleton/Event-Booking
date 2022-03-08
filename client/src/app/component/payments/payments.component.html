@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="card" >
+        <h2 style="color: rgb(0, 0, 0);">Pay with card</h2>
+        <button class="btn btn-primary mb-3" (click)="makePayment()">Enter card details</button>
+    </div>
+
+    <div class="card" >
+        <google-pay-button
+            environment="TEST"
+            buttonType="buy"
+            buttonColor="black"
+            [paymentRequest]="paymentRequest"
+            (loadpaymentdata)="onLoadPaymentData($event)"
+            (error)="onError($event)"
+            [paymentAuthorizedCallback]="onPaymentDataAuthorized">
+        </google-pay-button>
+    </div>
+
+<div>
+    <div *ngIf="success">
+        <h1 style="color: rgb(9, 255, 0);">Your Payment is completed successfully</h1>
+        </div>
+        <div style="color: rgb(9, 255, 0);" *ngIf="failure">
+            <h1>Your Payment is completed successfully</h1>
+        </div>
+    </div>
+</div>

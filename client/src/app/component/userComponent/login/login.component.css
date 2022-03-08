@@ -1,0 +1,9 @@
+.outter{
+      opacity: 97%;
+      margin-top: -20px;
+      margin-bottom: -20px;
+}
+.forgotPass{
+      display: flex;
+      flex-direction: row;
+}

@@ -1,0 +1,36 @@
+<div class="grid-container-fluid">
+<section class="home" id="home">
+
+  <div class="content">
+      <h4>Book your event</h4>
+      <h4>At your home</h4>
+      
+  </div>
+  
+</section>
+</div>
+
+<div class="container">
+  <!-- <div class="row">
+    <div class="col-12 col-md-6 col-lg-4"> -->
+<div class="grid-container " >
+<mat-card cols='5' *ngFor="let data of tabledata" class="example-card">
+    <img class="image" mat-card-image src="../../../../assets/{{data.image}}" alt="Photo of a Event">
+    <hr>
+    
+    <mat-card-header id="adddata" style=" margin-left: -47px;">
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{data.product}}  </mat-card-title>
+      <mat-card-subtitle>{{data.department}}</mat-card-subtitle>
+      <mat-card-title>{{"₹"+data.price}}</mat-card-title>
+      <mat-card-subtitle style="color: black;">{{data.description}}</mat-card-subtitle>
+
+    </mat-card-header>
+ 
+    <mat-card-actions style="text-align: center;">      
+      <button id="add" mat-button (click)="addToCart(data)">Add to Cart</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+  

@@ -1,0 +1,95 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <section class="outter">
+    <div class="container py-5 h-100" >
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: rem; color: #FBB753;">
+            <div class="row g-0">
+              <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <img
+                  src="https://www.uncoaching.online/wp-content/uploads/2021/12/61404c006d5b90c0d507a2ef_Drawkit-Ecommerce-Online-Shopping-GIF.gif"
+                  alt="login form"
+                  class="img-fluid"
+                  style="border-radius: 1rem 0 0 1rem; height: 100%"
+                />
+              </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <span class="h1 fw-bold mb-0" style="font-size: 5rem"
+                      >EVENT BOOKING</span
+                    >
+                  </div>
+
+                  <h1 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">
+                    Login to your account
+                  </h1>
+
+                  <div class="form-outline mb-4">
+                    <input
+                      [class.is-invalid]="email.invalid && email.touched"
+                      type="email"
+                      id="form2Example17"
+                      class="form-control form-control-lg"
+                      formControlName="email"
+                      placeholder="Email Address"
+                    />
+                    <div *ngIf="email.invalid && email.touched">
+                      <small class="text-danger" *ngIf="email.errors?.required"
+                        >Email is required</small
+                      >
+                    </div>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input
+                      [class.is-invalid]="password.invalid && password.touched"
+                      type="password"
+                      id="form2Example27"
+                      class="form-control form-control-lg"
+                      formControlName="password"
+                      placeholder="Password"
+                    />
+                    <div *ngIf="password.invalid && password.touched">
+                      <!-- <small class="text-danger" *ngIf="password.errors?.pattern">password should have a number, special character, lower and uppercase letters</small> -->
+                      <small
+                        class="text-danger"
+                        *ngIf="password.errors?.required"
+                        >Please fill the password</small
+                      >
+                    </div>
+                  </div>
+
+                  <div class="pt-1 mb-4">
+                    <button
+                      (click)="login()"
+                      class="btn btn-warning btn-lg btn-block"
+                      style="width: 100%;"
+                      type="button">Login</button>
+                  </div>
+                  <div class="forgotPass">
+                  <p class="mb-5 pb-lg-2" >
+                    Don't have an account?
+                    <a
+                      routerLink="/registration"
+                      routerLinkActive="active"
+                      style="color: #393f81"
+                      >Register here</a
+                    >
+                  </p>
+                  <p style="margin-left: 180px;"> <a routerLink="/forgotPassword"
+                    routerLinkActive="active"
+                      style="color: #393f81">
+                    Forgot password</a> </p>
+                </div>
+                  <a href="#!" class="small text-muted">Terms of use.</a>
+                  <a href="#!" class="small text-muted">Privacy policy</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</form>

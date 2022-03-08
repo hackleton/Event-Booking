@@ -1,0 +1,85 @@
+<div class="outter-container">
+  <form [formGroup]="orderForm">
+    <div class="form-group" style="margin-bottom: 15px">
+      <label>Event</label>
+      <input
+        formControlName="product"
+        type="text"
+        class="form-control"
+        style="width: 300px"
+      />
+    </div>
+
+    <div class="form-group" style="margin-bottom: 15px">
+      <label>Seats available</label>
+      <input
+        formControlName="quantity"
+        type="number"
+        class="form-control"
+        style="width: 300px"
+      />
+    </div>
+
+    <div class="form-group" style="margin-bottom: 15px">
+      <label>Event Department</label>
+      <select
+        formControlName="department"
+        class="form-control"
+        style="width: 300px"
+      >
+        <option>Party</option>
+        <option>Music fest</option>
+        <option>Pool party</option>
+        <option>Sky Diving</option>
+        <option>Water games</option>
+        <option>Treasure Hunting</option>
+        <option>Others</option>
+      </select>
+    </div>
+
+    <div class="form-group" style="margin-bottom: 15px">
+      <label>Price</label>
+      <input
+        formControlName="price"
+        class="form-control"
+        style="width: 300px"
+      />
+    </div>
+
+    <div  class="form-group" style="margin-bottom: 15px">
+      <input formControlName="image" id="input-b5" name="input-b5[]" type="file" multiple>
+    </div>
+
+    <div class="form-group" style="margin-bottom: 15px">
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description" ></textarea>
+      </mat-form-field>
+    </div>
+
+    <div class="pt-1 mb-4">
+      <button
+        *ngIf="updateForm"
+        (click)="updateOrder()"
+        class="btn btn-dark btn-lg btn-block"
+        style="width: 300px"
+        type="button"
+      >
+        Update Order
+      </button>
+      <button
+        *ngIf="!updateForm"
+        (click)="addOrder()"
+        class="btn btn-dark btn-lg btn-block"
+        style="width: 300px"
+        type="button"
+      >
+        Add Event
+      </button>
+    </div>
+  </form>
+
+
+</div>
+
+

@@ -1,0 +1,24 @@
+mat-table {
+  width: 90%;
+  margin-left: 5%;
+}
+mat-paginator{
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 50px;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.search {
+  width: 75%;
+  color: aliceblue;
+  margin-left: 5%;
+
+}
+button {
+  margin-top: 20px;
+  margin-right: 40px;
+  width: 225kpx;
+}
